@@ -13,7 +13,7 @@ class Category:
         print(f'${self.amount}.00 has been deposited into {self.name}.')
         #print(self.ledger)
         
-    def withdrawal(self, transaction, description):
+    def withdraw(self, transaction, description):
         self.ledger.append({"Amount": -abs(transaction), "Description": description})
         if transaction > self.amount:
             print('Insufficent Funds')
@@ -52,8 +52,8 @@ insurance = Category("Insurance")
 food = Category("Food")
 gas = Category("Gas")
 internet = Category("Internet")
-#print(food)
-#print(jm)
+
+
 initial_deposit.deposit(1000, rent)
 rent.deposit(1000, 'Deposit') #deposit into initial deposit
 initial_deposit.transfer(500, rent)
@@ -63,9 +63,4 @@ initial_deposit.transfer(500, rent)
 
 #initial_deposit.get_balance()#balance of initial_deposit
 #print(rent.amount)
-#rent.withdrawal(1000, 'Withdrawal')
-
-
-
-#Jack.check_funds()
-#food.deposit(22, 'Sandwich')
+#rent.withdraw(1000, 'Withdraw')
