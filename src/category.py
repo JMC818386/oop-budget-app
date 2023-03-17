@@ -35,9 +35,9 @@ class Category:
             print('Cannot Complete Transfer: Insufficent Funds')
         elif transaction <= self.amount:
             self.amount -= transaction
-        print(f'${transaction}.00 has been transfered to {name.amount}')
-        print(f'${initial_deposit.amount}.00 initial deposit amount after transfer')
-        print(f'${name.amount}.00 rent amount after transfer')
+        print(f'${transaction}.00 has been transfered to {name.name}')
+        print(f'${initial_deposit.amount}.00 {self.name} amount after transfer')
+        print(f'${name.amount}.00 {name.name} amount after transfer')
 
     #def check_funds(self):
         #pass
