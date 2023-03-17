@@ -30,8 +30,14 @@ class Category:
         if transaction > name.amount:
             print('Cannot Complete Transfer: Insufficent Funds')
         elif transaction <= name.amount:    
-            name.amount -= transaction
-        print(f'${transaction}.00 has been transfered to {self.name}')
+            name.amount += transaction
+        if transaction > self.amount:
+            print('Cannot Complete Transfer: Insufficent Funds')
+        elif transaction <= self.amount:
+            self.amount -= transaction
+        print(f'${transaction}.00 has been transfered to {name.amount}')
+        print(f'${initial_deposit.amount}.00 initial deposit amount after transfer')
+        print(f'${name.amount}.00 rent amount after transfer')
 
     #def check_funds(self):
         #pass
@@ -48,15 +54,18 @@ gas = Category("Gas")
 internet = Category("Internet")
 #print(food)
 #print(jm)
-initial_deposit.deposit(2000, 'Deposit') #deposit into initial deposit
-rent.deposit(2000, 'Deposit') #deposit into rent
-rent.transfer(1000, initial_deposit)
-initial_deposit.get_balance()
-rent.get_balance()
+initial_deposit.deposit(1000, rent)
+rent.deposit(1000, 'Deposit') #deposit into initial deposit
+initial_deposit.transfer(500, rent)
+#rent.deposit(2000, 'Deposit') #deposit into rent
+#rent.transfer(1000, initial_deposit)
 
-#print(initial_deposit.amount)
-#print(rent.amount)
 
 #initial_deposit.get_balance()#balance of initial_deposit
 #print(rent.amount)
 #rent.withdrawal(1000, 'Withdrawal')
+
+
+
+#Jack.check_funds()
+#food.deposit(22, 'Sandwich')
