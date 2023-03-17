@@ -39,12 +39,19 @@ class Category:
         print(f'${initial_deposit.amount}.00 {self.name} amount after transfer')
         print(f'${name.amount}.00 {name.name} amount after transfer')
 
-    #def check_funds(self):
-        #pass
+    def check_funds(self, amount):
+        if self.amount < amount:
+            print(False)
+            return False
+        elif self.amount >= amount:
+            print(True)
+            return True
         
     #def __str__(self):
-        #pass
+        #print(f'{self.name}: {self.amount}')
+        #return f'{self.name}: {self.amount}'
         
+
 initial_deposit = Category("Initial Deposit")
 rent = Category("Rent")
 utilities = Category("Utilities")
@@ -52,47 +59,3 @@ insurance = Category("Insurance")
 food = Category("Food")
 gas = Category("Gas")
 internet = Category("Internet")
-
-#Initial Deposit
-initial_deposit.deposit(3000, "Deposit")
-initial_deposit.get_balance()
-
-#Transfer $500 to Rent
-initial_deposit.transfer(500, rent)
-rent.get_balance()
-initial_deposit.get_balance()
-
-#Transfer $100 to Utilities
-initial_deposit.transfer(100, utilities)
-utilities.get_balance()
-initial_deposit.get_balance()
-
-#Transfer $200 to Insurance
-initial_deposit.transfer(200, insurance)
-insurance.get_balance()
-initial_deposit.get_balance()
-
-#Transfer $400 to Food
-initial_deposit.transfer(400, food)
-food.get_balance()
-initial_deposit.get_balance()
-
-#Transfer $400 to Gas
-initial_deposit.transfer(100, gas)
-gas.get_balance()
-initial_deposit.get_balance()
-
-#Transfer $400 to Internet
-initial_deposit.transfer(100, internet)
-food.get_balance()
-initial_deposit.get_balance()
-
-
-
-#rent.deposit(2000, 'Deposit') #deposit into rent
-#rent.transfer(1000, initial_deposit)
-
-
-#initial_deposit.get_balance()#balance of initial_deposit
-#print(rent.amount)
-#rent.withdrawal(1000, 'Withdrawal')
